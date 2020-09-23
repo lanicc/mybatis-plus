@@ -44,7 +44,7 @@ public class MybatisPlusConfig implements MybatisPlusPropertiesCustomizer {
     @SuppressWarnings("deprecation")
     public static class LanBatchExecutor extends MybatisBatchExecutor {
 
-        private SimpleExecutor executor;
+        private final SimpleExecutor executor;
 
         protected LanBatchExecutor(org.apache.ibatis.session.Configuration configuration, Transaction transaction) {
             super(configuration, transaction);

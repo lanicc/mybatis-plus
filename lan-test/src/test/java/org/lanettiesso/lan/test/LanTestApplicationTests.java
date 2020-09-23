@@ -20,13 +20,9 @@ class LanTestApplicationTests {
     void testBatchSave() {
         List<SysRole> roleList = new ArrayList<>(10);
         for (int i = 0; i < 10; i++) {
-            roleList.add(newRole().setIdRole(14 + i).setRoleName("hahha"));
+            roleList.add(newRole().setRoleName("hahha"));
         }
-        boolean b = roleService.removeByIds(
-            roleList.stream()
-                .map(SysRole::getIdRole)
-                .collect(Collectors.toSet())
-        );
+        boolean b = roleService.saveBatch(roleList);
         for (SysRole sysRole : roleList) {
             System.out.println(sysRole);
         }
