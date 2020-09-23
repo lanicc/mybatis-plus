@@ -1,0 +1,15 @@
+
+
+group = 'org.lanettiesso'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+dependencies {
+    api project(":mybatis-plus-boot-starter")
+    implementation "${lib.'sqlserver'}"
+    implementation platform("org.springframework.boot:spring-boot-dependencies:${springBootVersion}")
+    api "org.springframework.boot:spring-boot-autoconfigure"
+    api "org.springframework.boot:spring-boot-starter-test"
+    api "org.springframework:spring-tx"
+    implementation "${lib.'junit-jupiter-api'}"
+}
